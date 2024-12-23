@@ -68,7 +68,7 @@ curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/sonarr/In
 echo "Done"
 
 echo "Download YoutubeSeriesDownloader service..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/sonarr/YoutubeSeriesDownloader.service -o /custom-services.d/YoutubeSeriesDownloader
+curl https://raw.githubusercontent.com/tekanoma/arr-scripts/main/sonarr/YoutubeSeriesDownloader.service -o /custom-services.d/YoutubeSeriesDownloader
 echo "Done"
 
 mkdir -p /config/extended
@@ -92,7 +92,7 @@ curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/sonarr/Da
 echo "Done"
 
 echo "Download Extras script..."
-curl https://raw.githubusercontent.com/RandomNinjaAtk/arr-scripts/main/sonarr/Extras.bash -o /config/extended/Extras.bash 
+curl https://raw.githubusercontent.com/tekanoma/arr-scripts/main/sonarr/Extras.bash -o /config/extended/Extras.bash 
 echo "Done"
 
 if [ ! -f /config/extended/sma.ini ]; then
