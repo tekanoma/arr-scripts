@@ -148,9 +148,9 @@ DownloadExtras () {
 
             log "$itemTitle :: $i of $tmdbVideosListDataIdsCount :: $tmdbExtraType :: $tmdbExtraTitle ($tmdbExtraKey) :: Downloading (yt-dlp :: $videoFormat)..."
             if [ ! -z "$cookiesFile" ]; then
-                yt-dlp -f "$videoFormat" --no-video-multistreams --cookies "$cookiesFile" -o "$tempFolder/$finalFileName" --write-auto-subs --write-subs --sub-lang $videoLanguages --embed-subs --merge-output-format mkv --sponsorblock-mark all --sponsorblock-remove sponsor --no-mtime --geo-bypass $ytdlpExtraOpts "https://www.youtube.com/watch?v=$tmdbExtraKey"  2>&1 | tee -a /config/logs/$scriptName.txt
+                yt-dlp -f "$videoFormat" --no-video-multistreams --cookies "$cookiesFile" -o "$tempFolder/$finalFileName" --write-auto-subs --write-subs --sub-lang $videoLanguages --convert-subs srt --merge-output-format mkv --sponsorblock-mark all --sponsorblock-remove sponsor --no-mtime --geo-bypass $ytdlpExtraOpts "https://www.youtube.com/watch?v=$tmdbExtraKey"  2>&1 | tee -a /config/logs/$scriptName.txt
             else
-                yt-dlp -f "$videoFormat" --no-video-multistreams -o "$tempFolder/$finalFileName" --write-auto-subs --write-subs --sub-lang $videoLanguages --embed-subs --merge-output-format mkv --sponsorblock-mark all --sponsorblock-remove sponsor --no-mtime --geo-bypass $ytdlpExtraOpts "https://www.youtube.com/watch?v=$tmdbExtraKey"  2>&1 | tee -a /config/logs/$scriptName.txt
+                yt-dlp -f "$videoFormat" --no-video-multistreams -o "$tempFolder/$finalFileName" --write-auto-subs --write-subs --sub-lang $videoLanguages --convert-subs srt --merge-output-format mkv --sponsorblock-mark all --sponsorblock-remove sponsor --no-mtime --geo-bypass $ytdlpExtraOpts "https://www.youtube.com/watch?v=$tmdbExtraKey"  2>&1 | tee -a /config/logs/$scriptName.txt
             fi
             if [ -f "$tempFolder/$finalFileName.mkv" ]; then
                 log "$itemTitle :: $i of $tmdbVideosListDataIdsCount :: $tmdbExtraType :: $tmdbExtraTitle ($tmdbExtraKey) :: Compete"
